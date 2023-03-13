@@ -31,7 +31,10 @@ body {
 .link-card {
     border-radius: 10px;
     background: #212121;
-    width: 200px;;
+    width: 200px;
+    box-shadow: 10px 10px 23px 0px rgba(0,0,0,0.42);
+    -webkit-box-shadow: 10px 10px 23px 0px rgba(0,0,0,0.42);
+    -moz-box-shadow: 10px 10px 23px 0px rgba(0,0,0,0.42);
 }
 
 .link-card .title {
