@@ -3,11 +3,99 @@
 <head>
     <meta charset="UTF-8">
     <title>Noriskky.de - Startpage</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        var doc = Document
+        var name = "Leon"
+        var disable24Hour = false
+        var timeZ = undefined
+        function start() {
+            setInterval( tick, 1000)
+            //updateTimeHook()
+            //console.log('gfds')
+        }
+        (function() {
+            start()
+        })();
+
+        function tick() {
+            var date = new Date(Date.now()).toLocaleString()
+            document.getElementById('msg').innerText = "Hey " + name + ", " + buildMsg()
+        }
+
+        function buildMsg() {
+            /**
+             * Build a nice message for the user.
+             *
+             * Following is how the message would be decided.
+             * 0 - 5:59 : It's too late, take some sleep
+             * 6 - 8:59 : You're up early
+             * 9 - 11:59 : Have a good day ahead
+             * 12 - 16:59 : Good Afternoon
+             * 17 - 19:59 : Good Evening
+             * 20 - 23:59 : It's time to wrap up for the day
+             */
+            date = new Date()
+            currentHour = date.getHours()
+            currentMinute = date.getMinutes()
+            currentTime = currentHour + (0.01 * currentMinute)
+
+            if (inRange(currentTime, 0, 5.59))
+                return "It's too late, take some sleep"
+            if (inRange(currentTime, 6, 8.59))
+                return "You're up early"
+            if (inRange(currentTime, 9, 11.59))
+                return "Have a good day ahead"
+            if (inRange(currentTime, 12, 16.59))
+                return "Good Afternoon"
+            if (inRange(currentTime, 17, 19.59))
+                return "Good Evening"
+            if (inRange(currentTime, 20, 24))
+                return "It's time to wrap up for the day"
+            else
+                return ""
+        }
+
+        function inRange(number, min, max) {
+            return (number >= min && number <= max)
+        }
+
+        function updateTime() {
+            /**
+             * Get the current time and date and return it.
+             */
+            currentDate = new Date()
+            finalDate = currentDate.toLocaleString().toString()
+            document.getElementById('msg').innerText = finalDate
+        }
+
+        function updateTimeHook() {
+            updateTime()
+            interval = setInterval(() => {
+                updateTime()
+            }, 30 * 1000)
+        }
+
+    </script>
 </head>
 <body>
-<h1>Hi</h1>
-  <footer>
-
-  </footer>
+<div class="welcome">
+    <h2 id="msg">Nan</h2>
+</div>
+<div class="cards">
+    <div class="link-card card-1">
+        <h1 class="title">Reddit</h1>
+        <a class="link" href="https://reddit.com/r/unixporn"><h4>r/Unixporn</h4></a>
+    </div>
+    <div class="link-card card-2">
+        <h1 class="title">Utils</h1>
+        <a class="link" href="http://google.com"><h4>Google</h4></a>
+    </div>
+    <div class="link-card card-3">
+        <h1 class="title">Productivity</h1>
+        <a class="link" href="https://Github.com"><h4>Github</h4></a>
+    </div>
+</div>
 </body>
 </html>

@@ -1,0 +1,59 @@
+body {
+    background: #1c1c1c;
+}
+
+.welcome {
+    color: #fff;
+    font-family: "Arial";
+    position: relative;
+    left: 0;
+    top: 100px;
+}
+
+.welcome h2 {
+    text-align: center;
+    z-index: 2;
+    margin: auto;
+}
+
+.cards {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    top: 200px;
+    gap: 10px;
+    display: grid;
+    grid-template-columns: repeat(3, 210px);
+    place-content: center;
+    margin: auto;
+}
+
+.link-card {
+    border-radius: 10px;
+    background: #212121;
+    width: 200px;;
+}
+
+.link-card .title {
+    font-family: "Agency FB";
+    text-align: center;
+}
+
+.link-card .link {
+    text-align: center;
+    font-family: Arial;
+    color: #ffffff;
+    padding-bottom: 10px;
+}
+
+.card-1 .title {
+    color: #ff5900;
+}
+
+.card-2 .title {
+    color: #6600fc;
+}
+
+.card-3 .title {
+    color: #7eff00;
+}
