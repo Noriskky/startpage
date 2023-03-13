@@ -29,6 +29,7 @@ body {
 }
 
 .link-card {
+    line-height: 0.5rem;
     border-radius: 10px;
     background: #212121;
     width: 200px;
@@ -40,14 +41,34 @@ body {
 .link-card .title {
     font-family: Arial;
     text-align: center;
+    font-size: 1.3rem;
 }
 
 .link-card .link {
+    text-decoration: none;
+    vertical-align: center;
     text-align: center;
     font-family: Arial;
     color: #ffffff;
-    padding-bottom: 10px;
+    transition: all ease-out 0.7s;
+
 }
+
+.bi {
+    height: 13px;
+    padding: 0px;
+    margin: 0px;
+    display: inline-block;
+    vertical-align: -0.05em;
+    fill: currentcolor;
+}
+
+.link-card .link:hover {
+    transition: color ease-out 0.7s;
+    color: #01ffd0;
+}
+
+
 
 .card-1 .title {
     color: #ff5900;
@@ -58,5 +79,5 @@ body {
 }
 
 .card-3 .title {
-    color: #7eff00;
+    color: #0066ff;
 }
