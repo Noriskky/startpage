@@ -1,5 +1,27 @@
+:root {
+    --aurora-red: #BF616A;
+    --aurora-orange: #D08770;
+    --aurora-yellow: #EBCB8B;
+    --aurora-green: #A3BE8C;
+    --aurora-purple: #B48EAD;
+
+    --polarnight-dark-1: #2E3440;
+    --polarnight-dark-2: #3B4252;
+    --polarnight-dark-3: #434C5E;
+    --polarnight-dark-4: #4C566A;
+
+    --snowstorm-white-1: #D8DEE9;
+    --snowstorm-white-2: #E5E9F0;
+    --snowstorm-white-3: #ECEFF4;
+
+    --frost-1: #8FBCBB;
+    --frost-2: #88C0D0;
+    --frost-3: #81A1C1;
+    --frost-4: #5E81AC;
+}
+
 body {
-    background: #1c1c1c;
+    background: var(--polarnight-dark-1);
 }
 
 .welcome {
@@ -31,7 +53,7 @@ body {
 .link-card {
     line-height: 0.5rem;
     border-radius: 10px;
-    background: #212121;
+    background: var(--polarnight-dark-2);
     width: 200px;
     box-shadow: 10px 10px 23px 0px rgba(0,0,0,0.42);
     -webkit-box-shadow: 10px 10px 23px 0px rgba(0,0,0,0.42);
@@ -68,16 +90,14 @@ body {
     color: #01ffd0;
 }
 
-
-
 .card-1 .title {
-    color: #ff5900;
+    color: var(--aurora-orange);
 }
 
 .card-2 .title {
-    color: #6600fc;
+    color: var(--aurora-purple);
 }
 
 .card-3 .title {
-    color: #0066ff;
+    color: var(--frost-4);
 }
