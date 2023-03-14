@@ -36,13 +36,14 @@ body {
     text-align: center;
     z-index: 2;
     margin: auto;
+    height: 60px;
 }
 
 .cards {
     position: absolute;
     left: 50%;
     transform: translate(-50%);
-    top: 200px;
+    top: 280px;
     gap: 10px;
     display: grid;
     grid-template-columns: repeat(3, 210px);
@@ -87,7 +88,7 @@ body {
 
 .link-card .link:hover {
     transition: color ease-out 0.7s;
-    color: #01ffd0;
+    color: var(--frost-2)
 }
 
 .card-1 .title {
@@ -100,4 +101,66 @@ body {
 
 .card-3 .title {
     color: var(--frost-4);
+}
+
+.search {
+    border-radius: 10px;
+    left: 50%;
+    transform: translate(-50%);
+    position: absolute;
+    top: 170px;
+    width: 340px;
+    box-shadow: 10px 10px 23px 0px rgba(0,0,0,0.42);
+    -webkit-box-shadow: 10px 10px 23px 0px rgba(0,0,0,0.42);
+    -moz-box-shadow: 10px 10px 23px 0px rgba(0,0,0,0.42);
+}
+
+.searchinput {
+    text-align: center;
+    outline: none;
+    height: 40px;
+    width: 300px;
+    font-family: Arial;
+    color: #fff;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border: rgba(255, 255, 255, 0);
+    background: var(--polarnight-dark-2);
+    color: #fff;
+}
+
+.searchbtn {
+    text-align: center;
+    border: rgba(255, 255, 255, 0);
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+    position: absolute;
+    left: 299px;
+    height: 40px;
+    width: 40px;
+    background: var(--polarnight-dark-2);
+    color: #fff;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-around;
+}
+
+#Ecosia {
+    margin: 5px;
+    color: white;
+    background-color: var(--polarnight-dark-2);
+    border-radius: 10px;
+    border: rgba(255, 255, 255, 0);
+    padding: 5px;
+}
+
+#Google {
+    margin: 5px;
+    color: white;
+    background-color: var(--polarnight-dark-2);
+    border-radius: 10px;
+    border: rgba(255, 255, 255, 0);
+    padding: 5px;
 }
