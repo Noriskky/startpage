@@ -52,6 +52,7 @@ body {
 }
 
 .link-card {
+
     line-height: 0.5rem;
     border-radius: 10px;
     background: var(--polarnight-dark-2);
@@ -110,6 +111,7 @@ body {
     position: absolute;
     top: 170px;
     width: 340px;
+    height: 40px;
     box-shadow: 10px 10px 23px 0px rgba(0,0,0,0.42);
     -webkit-box-shadow: 10px 10px 23px 0px rgba(0,0,0,0.42);
     -moz-box-shadow: 10px 10px 23px 0px rgba(0,0,0,0.42);
@@ -128,7 +130,6 @@ body {
     background: var(--polarnight-dark-2);
     color: #fff;
 }
-
 .searchbtn {
     text-align: center;
     border: rgba(255, 255, 255, 0);
@@ -148,6 +149,8 @@ body {
 }
 
 #Ecosia {
+    transition: all 1s ease-out;
+    display: none;
     margin: 5px;
     color: white;
     background-color: var(--polarnight-dark-2);
@@ -157,10 +160,31 @@ body {
 }
 
 #Google {
+    transition: all 1s ease-out;
+    display: none;
     margin: 5px;
     color: white;
     background-color: var(--polarnight-dark-2);
     border-radius: 10px;
     border: rgba(255, 255, 255, 0);
     padding: 5px;
+}
+
+.search #Google {
+    display: flex;
+    transition: all 1s ease-out;
+}
+
+.search #Ecosia {
+    display: flex;
+    transition: all 1s ease-out;
+}
+
+.search {
+    transition: all 1s ease-out;
+    height: 75px;
+}
+
+#Ecosia:hover {
+    background-color: var(--frost-4);
 }
