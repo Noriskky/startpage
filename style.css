@@ -131,12 +131,37 @@ body {
     color: #fff;
 }
 .searchbtn {
+    position: absolute;
     text-align: center;
     border: rgba(255, 255, 255, 0);
     border-bottom-right-radius: 10px;
     border-top-right-radius: 10px;
     position: absolute;
     left: 299px;
+    height: 40px;
+    width: 40px;
+    background: var(--polarnight-dark-2);
+    color: #fff;
+}
+
+.togglebuttonActive {
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
+    text-align: center;
+    border: rgba(255, 255, 255, 0);
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    background: var(--polarnight-dark-2);
+    color: #fff;
+}
+
+.togglebuttonDeactive {
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
+    text-align: center;
+    border: rgba(255, 255, 255, 0);
+    position: absolute;
     height: 40px;
     width: 40px;
     background: var(--polarnight-dark-2);
@@ -187,4 +212,20 @@ body {
 
 #Ecosia:hover {
     background-color: var(--frost-4);
+}
+
+#Google:hover {
+    background-color: var(--frost-4);
+}
+
+.deactive1 {
+    height: 40px;
+}
+
+.deactive {
+    display: none;
+}
+
+.hidden {
+    display: none;
 }

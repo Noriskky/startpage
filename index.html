@@ -10,7 +10,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
     <script type="text/javascript">
-        var searchengine = Ecosia
+        var menuebar = false;
+        var searchengine = "none"
         var Ecosia = "Ecosia"
         var Google = "Google"
         var doc = Document
@@ -87,6 +88,22 @@
             if (searchengine == Google) document.location.href = "https://www.google.com/search?q=" + document.querySelector(".searchinput").value;
         }
 
+        function tooglemenubar() {
+            if (menuebar) {
+                menuebar = false
+                document.getElementById('search1').classList.remove('deactive1')
+                document.getElementById('buttons').classList.remove('deactive')
+                document.getElementById('togglebuttonActive').classList.remove('hidden')
+                document.getElementById('togglebuttonDeactive').classList.add('hidden')
+            } else {
+                menuebar = true;
+                document.getElementById('search1').classList.add('deactive1')
+                document.getElementById('buttons').classList.add('deactive')
+                document.getElementById('togglebuttonActive').classList.add('hidden')
+                document.getElementById('togglebuttonDeactive').classList.remove('hidden')
+            }
+        }
+
         function setGoogle() {
             searchengine = Google
             $('.searchinput').attr('placeholder','Search something with Google. =)');
@@ -96,18 +113,37 @@
             searchengine = Ecosia
             $('.searchinput').attr('placeholder','Search something with Ecosia. =)');
         }
+
+        function key_down(e) {
+            if(e.keyCode == 13) {
+                alert("dsa")
+                search()
+            }
+        }
+
     </script>
 </head>
 <body>
 <div class="welcome">
     <h2 id="msg">Nan</h2>
 </div>
-<div class="search">
-    <input type="search" id="searchinput" class="searchinput" placeholder="Select a Searchengine."></input>
+<div id="search1" class="search deactive1">
+    <button onclick="tooglemenubar()" id="togglebuttonActive" class="togglebuttonActive hidden">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-circle" viewBox="0 0 16 16">
+            <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+            <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
+        </svg>
+    </button>
+    <button onclick="tooglemenubar()" id="togglebuttonDeactive" class="togglebuttonDeactive">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-down" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z"/>
+        </svg>
+    </button>
+    <input type="search" id="searchinput" onsearch="search()" class="searchinput" placeholder="Select a Searchengine."></input>
     <button onclick="search()" on class="searchbtn"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
         <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
     </svg></button>
-    <div class="buttons">
+    <div id="buttons" class="buttons deactive">
     <button id="Google" onclick="setGoogle()">Google</button>
     <button id="Ecosia" onclick="setEcosia()">Ecosia</button>
     </div>
