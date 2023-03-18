@@ -15,19 +15,24 @@
         var Ecosia = "Ecosia"
         var Google = "Google"
         var doc = Document
-        var name = "Leon"
+        var name = ""
         var disable24Hour = false
         var timeZ = undefined
         function start() {
             setInterval( tick, 1000)
         }
         (function() {
+            let askname = confirm("Can i ask you for your name it will does not saved you can look at the code is on Github")
+            if (askname.valueOf() === true) {
+                let yourname = prompt("What's your name?")
+                name = " " + yourname.toString()
+            }
             start()
         })();
 
         function tick() {
             var date = new Date(Date.now()).toLocaleString()
-            document.getElementById('msg').innerText = "Hey " + name + ", " + buildMsg()
+            document.getElementById('msg').innerText = "Hey" + name + ", " + buildMsg()
         }
 
         function buildMsg() {
@@ -121,6 +126,9 @@
             }
         }
 
+        function setCookie(name) {
+            document.cookie = "name=" + name
+        }
     </script>
 </head>
 <body>
