@@ -89,8 +89,10 @@
         }
 
         function search() {
-            if (searchengine == Ecosia) document.location.href = "https://www.ecosia.org/search?q=" + document.querySelector(".searchinput").value;
-            if (searchengine == Google) document.location.href = "https://www.google.com/search?q=" + document.querySelector(".searchinput").value;
+            if (document.querySelector(".searchinput").value = "") {
+                if (searchengine == Ecosia) document.location.href = "https://www.ecosia.org/search?q=" + document.querySelector(".searchinput").value;
+                if (searchengine == Google) document.location.href = "https://www.google.com/search?q=" + document.querySelector(".searchinput").value;
+            }
         }
 
         function tooglemenubar() {
